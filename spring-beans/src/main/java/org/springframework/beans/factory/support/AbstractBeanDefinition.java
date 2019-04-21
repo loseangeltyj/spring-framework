@@ -1099,7 +1099,7 @@ public abstract class AbstractBeanDefinition extends BeanMetadataAttributeAccess
 		// Check that lookup methods exists.
 		if (hasMethodOverrides()) {
 			Set<MethodOverride> overrides = getMethodOverrides().getOverrides();
-			synchronized (overrides) {
+			synchronized (overrides) {// 同步
 				for (MethodOverride mo : overrides) {
 					prepareMethodOverride(mo);
 				}
